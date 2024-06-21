@@ -1,9 +1,12 @@
 const express = require("express");
+const cors = require("cors");
 
 const moviesRouter = require("./routers/movies");
 const { errorHandler } = require("./utils/errors");
 
 const app = express();
+
+app.use(cors());
 
 // Middleware for logging
 app.use((req, res, next) => {
